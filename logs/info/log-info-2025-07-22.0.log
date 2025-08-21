@@ -1,0 +1,865 @@
+2025-07-22 15:11:25.501 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2025-07-22 15:11:25.532 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Starting PhenolicApplication using Java 1.8.0_332 on DESKTOP-98311F9 with PID 29444 (E:\moneyProject\phenolic\target\classes started by liu in E:\moneyProject\phenolic)
+2025-07-22 15:11:25.532 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - The following profiles are active: dev
+2025-07-22 15:11:25.582 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22 15:11:25.582 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22 15:11:26.451 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-22 15:11:26.455 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-22 15:11:26.486 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 12 ms. Found 0 Redis repository interfaces.
+2025-07-22 15:11:27.250 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+2025-07-22 15:11:27.265 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:11:27.266 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-22 15:11:27.266 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-07-22 15:11:27.363 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-22 15:11:27.364 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1781 ms
+2025-07-22 15:11:27.534 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-07-22 15:11:28.402 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-07-22 15:11:29.473 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:11:30.417 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-22 15:11:30.443 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:11:30.482 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+2025-07-22 15:11:30.493 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Started PhenolicApplication in 5.555 seconds (JVM running for 6.959)
+2025-07-22 15:20:41.906 [http-nio-8088-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22 15:20:41.906 [http-nio-8088-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-22 15:20:41.907 [http-nio-8088-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-07-22 15:20:42.013 [http-nio-8088-exec-3] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:20:42.022 [http-nio-8088-exec-3] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:20:42.034 [http-nio-8088-exec-3] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:20:42.863 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=null, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:20:42.866 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 88 个字段
+2025-07-22 15:20:42.913 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 0 条数据
+2025-07-22 15:20:42.916 [http-nio-8088-exec-3] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：0 条，失败：98 条
+2025-07-22 15:22:46.693 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:22:46.694 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-07-22 15:22:46.712 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-07-22 15:22:53.968 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2025-07-22 15:22:54.000 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Starting PhenolicApplication using Java 1.8.0_332 on DESKTOP-98311F9 with PID 22788 (E:\moneyProject\phenolic\target\classes started by liu in E:\moneyProject\phenolic)
+2025-07-22 15:22:54.000 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - The following profiles are active: dev
+2025-07-22 15:22:54.053 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22 15:22:54.053 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22 15:22:54.856 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-22 15:22:54.859 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-22 15:22:54.883 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-07-22 15:22:55.660 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+2025-07-22 15:22:55.671 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:22:55.672 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-22 15:22:55.672 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-07-22 15:22:55.771 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-22 15:22:55.771 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1717 ms
+2025-07-22 15:22:55.942 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-07-22 15:22:56.806 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-07-22 15:22:57.660 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:22:58.448 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-22 15:22:58.473 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:22:58.512 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+2025-07-22 15:22:58.523 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Started PhenolicApplication in 5.165 seconds (JVM running for 6.45)
+2025-07-22 15:23:07.936 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22 15:23:07.936 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-22 15:23:07.938 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-22 15:23:08.109 [http-nio-8088-exec-1] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:23:08.122 [http-nio-8088-exec-1] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:23:08.123 [http-nio-8088-exec-1] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:23:09.309 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:23:09.310 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:23:09.379 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 0 条数据
+2025-07-22 15:23:09.382 [http-nio-8088-exec-1] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：0 条，失败：98 条
+2025-07-22 15:24:55.399 [http-nio-8088-exec-5] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:24:55.399 [http-nio-8088-exec-5] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:25:18.440 [http-nio-8088-exec-5] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:26:24.002 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:26:24.002 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:26:24.032 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 0 条数据
+2025-07-22 15:26:24.034 [http-nio-8088-exec-5] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：0 条，失败：98 条
+2025-07-22 15:26:24.600 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:26:24.601 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-07-22 15:26:24.610 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-07-22 15:26:30.702 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2025-07-22 15:26:30.713 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Starting PhenolicApplication using Java 1.8.0_332 on DESKTOP-98311F9 with PID 2748 (E:\moneyProject\phenolic\target\classes started by liu in E:\moneyProject\phenolic)
+2025-07-22 15:26:30.713 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - The following profiles are active: dev
+2025-07-22 15:26:30.767 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22 15:26:30.767 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22 15:26:31.462 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-22 15:26:31.464 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-22 15:26:31.488 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-07-22 15:26:32.347 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+2025-07-22 15:26:32.360 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:26:32.361 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-22 15:26:32.361 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-07-22 15:26:32.469 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-22 15:26:32.469 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1701 ms
+2025-07-22 15:26:32.637 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-07-22 15:26:33.463 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-07-22 15:26:34.318 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:26:35.060 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-22 15:26:35.081 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:26:35.114 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+2025-07-22 15:26:35.124 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Started PhenolicApplication in 4.972 seconds (JVM running for 6.215)
+2025-07-22 15:26:38.749 [http-nio-8088-exec-3] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22 15:26:38.749 [http-nio-8088-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-22 15:26:38.750 [http-nio-8088-exec-3] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-07-22 15:26:38.891 [http-nio-8088-exec-3] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:26:38.903 [http-nio-8088-exec-3] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:26:44.827 [http-nio-8088-exec-3] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:26:50.585 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:26:50.586 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:26:50.587 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:26:50.588 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:26:50.589 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:26:50.590 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:26:50.633 [http-nio-8088-exec-3] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 0 条数据
+2025-07-22 15:26:50.635 [http-nio-8088-exec-3] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：0 条，失败：98 条
+2025-07-22 15:29:01.521 [http-nio-8088-exec-5] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:29:01.521 [http-nio-8088-exec-5] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:29:01.521 [http-nio-8088-exec-5] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:29:01.566 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:29:01.567 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:29:01.568 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:29:01.569 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:29:33.541 [http-nio-8088-exec-5] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 0 条数据
+2025-07-22 15:29:33.542 [http-nio-8088-exec-5] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：0 条，失败：98 条
+2025-07-22 15:30:00.520 [http-nio-8088-exec-6] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:30:00.521 [http-nio-8088-exec-6] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:30:00.521 [http-nio-8088-exec-6] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:30:00.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:30:00.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:30:00.566 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:30:00.567 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:30:00.568 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:31:13.691 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 0 条数据
+2025-07-22 15:31:13.692 [http-nio-8088-exec-6] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：0 条，失败：98 条
+2025-07-22 15:31:14.354 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:31:14.354 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-07-22 15:31:14.367 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-07-22 15:31:32.883 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2025-07-22 15:31:32.906 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Starting PhenolicApplication using Java 1.8.0_332 on DESKTOP-98311F9 with PID 28636 (E:\moneyProject\phenolic\target\classes started by liu in E:\moneyProject\phenolic)
+2025-07-22 15:31:32.907 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - The following profiles are active: dev
+2025-07-22 15:31:32.957 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22 15:31:32.957 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22 15:31:33.620 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-22 15:31:33.623 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-22 15:31:33.644 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2025-07-22 15:31:34.342 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+2025-07-22 15:31:34.352 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:31:34.353 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-22 15:31:34.353 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-07-22 15:31:34.451 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-22 15:31:34.451 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1493 ms
+2025-07-22 15:31:34.597 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-07-22 15:31:35.360 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-07-22 15:31:36.130 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:31:36.874 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-22 15:31:36.897 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:31:36.935 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+2025-07-22 15:31:36.946 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Started PhenolicApplication in 4.634 seconds (JVM running for 5.868)
+2025-07-22 15:35:13.078 [http-nio-8088-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22 15:35:13.078 [http-nio-8088-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-22 15:35:13.079 [http-nio-8088-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-07-22 15:35:13.191 [http-nio-8088-exec-2] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:35:13.202 [http-nio-8088-exec-2] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:35:13.203 [http-nio-8088-exec-2] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:35:14.161 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:35:14.161 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:35:14.162 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:35:14.163 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:35:14.164 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:35:14.165 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:35:14.166 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:35:39.957 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 开始保存 98 条数据
+2025-07-22 15:35:39.958 [http-nio-8088-exec-2] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 98 条数据
+2025-07-22 15:35:39.960 [http-nio-8088-exec-2] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：98 条，失败：0 条
+2025-07-22 15:35:39.960 [http-nio-8088-exec-2] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始批量保存导入数据，共 98 条
+2025-07-22 15:36:20.524 [http-nio-8088-exec-6] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:36:20.525 [http-nio-8088-exec-6] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:36:20.525 [http-nio-8088-exec-6] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:36:20.563 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:36:20.564 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:36:20.565 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:36:20.592 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 开始保存 98 条数据
+2025-07-22 15:36:20.592 [http-nio-8088-exec-6] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 98 条数据
+2025-07-22 15:36:20.593 [http-nio-8088-exec-6] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：98 条，失败：0 条
+2025-07-22 15:36:20.593 [http-nio-8088-exec-6] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始批量保存导入数据，共 98 条
+2025-07-22 15:37:07.017 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:37:07.018 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-07-22 15:37:07.029 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-07-22 15:37:10.225 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2025-07-22 15:37:10.236 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Starting PhenolicApplication using Java 1.8.0_332 on DESKTOP-98311F9 with PID 16248 (E:\moneyProject\phenolic\target\classes started by liu in E:\moneyProject\phenolic)
+2025-07-22 15:37:10.237 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - The following profiles are active: dev
+2025-07-22 15:37:10.289 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22 15:37:10.289 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22 15:37:10.978 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-22 15:37:10.981 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-22 15:37:11.002 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-07-22 15:37:11.940 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+2025-07-22 15:37:11.955 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:37:11.956 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-22 15:37:11.957 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-07-22 15:37:12.087 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-22 15:37:12.087 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1797 ms
+2025-07-22 15:37:12.274 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-07-22 15:37:13.291 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-07-22 15:37:14.334 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:37:15.295 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-22 15:37:15.323 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:37:15.367 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+2025-07-22 15:37:15.387 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Started PhenolicApplication in 5.734 seconds (JVM running for 6.983)
+2025-07-22 15:37:17.843 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22 15:37:17.843 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-22 15:37:17.845 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-22 15:37:18.013 [http-nio-8088-exec-1] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:37:18.026 [http-nio-8088-exec-1] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:37:18.028 [http-nio-8088-exec-1] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:37:19.240 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:37:19.241 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:37:19.241 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:37:19.242 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:37:19.243 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:37:19.244 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:37:19.245 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:37:19.246 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:37:19.247 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:37:19.309 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:37:19.385 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 开始保存 98 条数据
+2025-07-22 15:37:19.386 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 98 条数据
+2025-07-22 15:37:19.389 [http-nio-8088-exec-1] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：98 条，失败：0 条
+2025-07-22 15:37:19.390 [http-nio-8088-exec-1] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始批量保存导入数据，共 98 条
+2025-07-22 15:51:17.768 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:51:17.768 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-07-22 15:51:17.776 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2025-07-22 15:51:23.860 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 6.1.7.Final
+2025-07-22 15:51:23.869 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Starting PhenolicApplication using Java 1.8.0_332 on DESKTOP-98311F9 with PID 31292 (E:\moneyProject\phenolic\target\classes started by liu in E:\moneyProject\phenolic)
+2025-07-22 15:51:23.870 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - The following profiles are active: dev
+2025-07-22 15:51:23.915 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-07-22 15:51:23.915 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-07-22 15:51:24.573 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2025-07-22 15:51:24.575 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2025-07-22 15:51:24.596 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2025-07-22 15:51:25.297 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8088 (http)
+2025-07-22 15:51:25.310 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:51:25.311 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-22 15:51:25.311 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.41]
+2025-07-22 15:51:25.408 [restartedMain] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-22 15:51:25.408 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1492 ms
+2025-07-22 15:51:25.553 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2025-07-22 15:51:26.267 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2025-07-22 15:51:27.010 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2025-07-22 15:51:27.712 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-07-22 15:51:27.752 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8088"]
+2025-07-22 15:51:27.787 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8088 (http) with context path ''
+2025-07-22 15:51:27.798 [restartedMain] INFO  com.project.phenolic.PhenolicApplication - Started PhenolicApplication in 4.49 seconds (JVM running for 5.566)
+2025-07-22 15:51:54.572 [http-nio-8088-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-22 15:51:54.572 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-22 15:51:54.573 [http-nio-8088-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2025-07-22 15:51:54.672 [http-nio-8088-exec-1] INFO  c.p.phenolic.controller.MedicinalPlantsController - 收到自定义映射Excel导入请求，文件名：文件1.xlsx
+2025-07-22 15:51:54.680 [http-nio-8088-exec-1] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始使用自定义映射导入Excel文件：文件1.xlsx
+2025-07-22 15:51:54.681 [http-nio-8088-exec-1] INFO  com.project.phenolic.utils.ExcelUtils - 开始使用自定义映射读取Excel文件：文件1.xlsx
+2025-07-22 15:51:55.423 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 解析到表头数据：{0=样本名称, 1=4.28, 2=5.73, 3=6.32, 4=6.70, 5=7.10, 6=7.49, 7=7.70, 8=7.92, 9=8.05, 10=8.31, 11=8.72, 12=8.95, 13=9.33, 14=9.44, 15=9.55, 16=9.70, 17=10.07, 18=10.16, 19=10.74, 20=11.26, 21=11.35, 22=11.73, 23=13.10, 24=13.26, 25=13.43, 26=13.56, 27=14.11, 28=14.53, 29=14.65, 30=14.93, 31=15.07, 32=16.51, 33=16.69, 34=16.88, 35=17.15, 36=18.25, 37=18.36, 38=18.48, 39=19.92, 40=20.49, 41=20.65, 42=20.93, 43=21.32, 44=21.71, 45=23.26, 46=23.51, 47=24.09, 48=24.29, 49=24.52, 50=24.72, 51=25.09, 52=25.51, 53=25.68, 54=25.89, 55=26.04, 56=26.49, 57=26.91, 58=27.89, 59=28.31, 60=29.68, 61=30.30, 62=30.70, 63=31.30, 64=31.88, 65=32.14, 66=32.29, 67=32.55, 68=32.66, 69=32.90, 70=33.12, 71=33.52, 72=33.89, 73=34.28, 74=34.52, 75=34.88, 76=35.45, 77=36.13, 78=36.51, 79=36.71, 80=36.88, 81=37.09, 82=37.49, 83=37.73, 84=37.89, 85=38.08, 86=38.50, 87=38.88, 88=39.29}
+2025-07-22 15:51:55.424 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '样本名称' -> 字段 'name'
+2025-07-22 15:51:55.424 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '4.28' -> 字段 'time1'
+2025-07-22 15:51:55.424 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '5.73' -> 字段 'time2'
+2025-07-22 15:51:55.424 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.32' -> 字段 'time3'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '6.70' -> 字段 'time4'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.10' -> 字段 'time5'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.49' -> 字段 'time6'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.70' -> 字段 'time7'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '7.92' -> 字段 'time8'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.05' -> 字段 'time9'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.31' -> 字段 'time10'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.72' -> 字段 'time11'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '8.95' -> 字段 'time12'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.33' -> 字段 'time13'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.44' -> 字段 'time14'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.55' -> 字段 'time15'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '9.70' -> 字段 'time16'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.07' -> 字段 'time17'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.16' -> 字段 'time18'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '10.74' -> 字段 'time19'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.26' -> 字段 'time20'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.35' -> 字段 'time21'
+2025-07-22 15:51:55.425 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '11.73' -> 字段 'time22'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.10' -> 字段 'time23'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.26' -> 字段 'time24'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.43' -> 字段 'time25'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '13.56' -> 字段 'time26'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.11' -> 字段 'time27'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.53' -> 字段 'time28'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.65' -> 字段 'time29'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '14.93' -> 字段 'time30'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '15.07' -> 字段 'time31'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.51' -> 字段 'time32'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.69' -> 字段 'time33'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '16.88' -> 字段 'time34'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '17.15' -> 字段 'time35'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.25' -> 字段 'time36'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.36' -> 字段 'time37'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '18.48' -> 字段 'time38'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '19.92' -> 字段 'time39'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.49' -> 字段 'time40'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.65' -> 字段 'time41'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '20.93' -> 字段 'time42'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.32' -> 字段 'time43'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '21.71' -> 字段 'time44'
+2025-07-22 15:51:55.426 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.26' -> 字段 'time45'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '23.51' -> 字段 'time46'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.09' -> 字段 'time47'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.29' -> 字段 'time48'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.52' -> 字段 'time49'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '24.72' -> 字段 'time50'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.09' -> 字段 'time51'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.51' -> 字段 'time52'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.68' -> 字段 'time53'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '25.89' -> 字段 'time54'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.04' -> 字段 'time55'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.49' -> 字段 'time56'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '26.91' -> 字段 'time57'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '27.89' -> 字段 'time58'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '28.31' -> 字段 'time59'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '29.68' -> 字段 'time60'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.30' -> 字段 'time61'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '30.70' -> 字段 'time62'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.30' -> 字段 'time63'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '31.88' -> 字段 'time64'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.14' -> 字段 'time65'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.29' -> 字段 'time66'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.55' -> 字段 'time67'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.66' -> 字段 'time68'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '32.90' -> 字段 'time69'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.12' -> 字段 'time70'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.52' -> 字段 'time71'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '33.89' -> 字段 'time72'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.28' -> 字段 'time73'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.52' -> 字段 'time74'
+2025-07-22 15:51:55.427 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '34.88' -> 字段 'time75'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '35.45' -> 字段 'time76'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.13' -> 字段 'time77'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.51' -> 字段 'time78'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.71' -> 字段 'time79'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '36.88' -> 字段 'time80'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.09' -> 字段 'time81'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.49' -> 字段 'time82'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.73' -> 字段 'time83'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '37.89' -> 字段 'time84'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.08' -> 字段 'time85'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.50' -> 字段 'time86'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '38.88' -> 字段 'time87'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 映射Excel列 '39.29' -> 字段 'time88'
+2025-07-22 15:51:55.428 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 表头映射完成，共映射 89 个字段
+2025-07-22 15:51:55.469 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 开始保存 98 条数据
+2025-07-22 15:51:55.469 [http-nio-8088-exec-1] INFO  c.p.phenolic.listener.MedicinalPlantsExcelListener - 所有数据解析完成！共处理 98 条数据
+2025-07-22 15:51:55.471 [http-nio-8088-exec-1] INFO  com.project.phenolic.utils.ExcelUtils - Excel文件读取完成，成功：98 条，失败：0 条
+2025-07-22 15:51:55.471 [http-nio-8088-exec-1] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 开始批量保存导入数据，共 98 条
+2025-07-22 15:51:55.948 [http-nio-8088-exec-1] INFO  c.p.p.service.impl.MedicinalPlantsServiceImpl - 批量保存完成，成功：98 条，失败：0 条
+2025-07-22 15:51:55.948 [http-nio-8088-exec-1] INFO  c.p.phenolic.controller.MedicinalPlantsController - Excel导入成功，成功：98 条，失败：0 条
+2025-07-22 17:19:21.456 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2025-07-22 17:19:21.461 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closing ...
+2025-07-22 17:19:21.470 [SpringContextShutdownHook] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
