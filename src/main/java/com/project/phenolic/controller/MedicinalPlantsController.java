@@ -1,14 +1,19 @@
 package com.project.phenolic.controller;
 
 import com.project.phenolic.common.Result;
+import com.project.phenolic.entity.MedicinalPlants;
+import com.project.phenolic.entity.UnknownPlants;
 import com.project.phenolic.service.IMedicinalPlantsService;
+import com.project.phenolic.utils.ExcelUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -65,6 +70,40 @@ public class MedicinalPlantsController {
 
         } catch (Exception e) {
             log.error("获取支持的列名失败", e);
+            return Result.fail("获取失败：" + e.getMessage());
+        }
+    }
+
+    /**
+     * 下载模板
+     */
+    @GetMapping("/downloadTemplate")
+    public void downloadExcelTemplate(HttpServletResponse response) {
+        // 1. 定义文件名（不含后缀）
+        String fileName = "未知样品模板";
+
+        // 3. 调用工具方法下载模板
+        ExcelUtils.downloadTemplate(response, fileName, UnknownPlants.class,  null);
+    }
+
+    /**
+     * 获取类型
+     */
+    @GetMapping("/getType")
+    public Result getType() {
+        log.info("获取类型");
+
+        try {
+            List<MedicinalPlants> type = medicinalPlantsService.lambdaQuery()
+                    .select(MedicinalPlants::getType)
+                    .groupBy(MedicinalPlants::getType)
+                    .list();
+            List<String> list = type.stream().map(MedicinalPlants::getType).collect(Collectors.toList());
+
+            return Result.success(list);
+
+        } catch (Exception e) {
+            log.error("获取类型失败", e);
             return Result.fail("获取失败：" + e.getMessage());
         }
     }
