@@ -36,7 +36,7 @@ public class MedicinalPlantsEnhancedImportDTO {
      */
     private String type;
 
-    // 时间字段 time1-time88
+    // 时间字段
     private Integer time1;
     private Integer time2;
     private Integer time3;

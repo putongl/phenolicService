@@ -4,8 +4,10 @@ import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.read.listener.PageReadListener;
 import com.alibaba.excel.util.ListUtils;
 import com.project.phenolic.config.ExcelFieldMapping;
+import com.project.phenolic.entity.UnknownPlants;
 import com.project.phenolic.entity.dto.MedicinalPlantsEnhancedImportDTO;
 import com.project.phenolic.listener.MedicinalPlantsExcelListener;
+import com.project.phenolic.listener.UnknownMedicinalPlantsExcelListener;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -167,6 +169,74 @@ public class ExcelUtils {
                     successList.addAll(dataList);
                     log.debug("批量处理 {} 条数据", dataList.size());
                 }
+            );
+
+            // 读取Excel文件
+            EasyExcel.read(file.getInputStream(), listener)
+                    .sheet()
+                    .headRowNumber(1) // 第一行是表头
+                    .doRead();
+
+            // 收集错误信息
+            errorMessages.addAll(listener.getErrorMessages());
+
+            // 构建返回结果
+            result.put("success", true);
+            result.put("message", "Excel读取完成");
+            result.put("totalCount", successList.size() + errorMessages.size());
+            result.put("successCount", successList.size());
+            result.put("errorCount", errorMessages.size());
+            result.put("successData", successList);
+            result.put("errorMessages", errorMessages);
+
+            log.info("Excel文件读取完成，成功：{} 条，失败：{} 条", successList.size(), errorMessages.size());
+
+        } catch (IOException e) {
+            log.error("读取Excel文件失败：{}", e.getMessage(), e);
+            result.put("success", false);
+            result.put("message", "读取Excel文件失败：" + e.getMessage());
+            result.put("totalCount", 0);
+            result.put("successCount", 0);
+            result.put("errorCount", 0);
+            result.put("successData", new ArrayList<>());
+            result.put("errorMessages", Arrays.asList("文件读取失败：" + e.getMessage()));
+
+        } catch (Exception e) {
+            log.error("处理Excel文件时发生未知错误：{}", e.getMessage(), e);
+            result.put("success", false);
+            result.put("message", "处理Excel文件失败：" + e.getMessage());
+            result.put("totalCount", 0);
+            result.put("successCount", 0);
+            result.put("errorCount", 0);
+            result.put("successData", new ArrayList<>());
+            result.put("errorMessages", Arrays.asList("处理失败：" + e.getMessage()));
+        }
+
+        return result;
+    }
+
+    /**
+     * 使用自定义字段映射读取Excel文件
+     *
+     * @param file Excel文件
+     * @param fieldMapping 字段映射配置
+     * @return 导入结果
+     */
+    public static Map<String, Object> unknowWithMapping(MultipartFile file, ExcelFieldMapping fieldMapping) {
+        log.info("开始使用自定义映射读取Excel文件：{}", file.getOriginalFilename());
+
+        Map<String, Object> result = new HashMap<>();
+        List<UnknownPlants> successList = new ArrayList<>();
+        List<String> errorMessages = new ArrayList<>();
+
+        try {
+            // 创建自定义监听器
+            UnknownMedicinalPlantsExcelListener listener = new UnknownMedicinalPlantsExcelListener(
+                    fieldMapping,
+                    dataList -> {
+                        successList.addAll(dataList);
+                        log.debug("批量处理 {} 条数据", dataList.size());
+                    }
             );
 
             // 读取Excel文件
