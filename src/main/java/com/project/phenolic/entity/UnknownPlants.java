@@ -41,13 +41,16 @@ public class UnknownPlants implements Serializable {
      * 值
      */
     @ExcelIgnore
-    private Double value;
+    private String value;
 
     /**
      * 批次
      */
     @ExcelIgnore
-    private Integer batch;
+    private String batch;
+
+    @ExcelIgnore
+    private String top;
 
     /**
      * 类别

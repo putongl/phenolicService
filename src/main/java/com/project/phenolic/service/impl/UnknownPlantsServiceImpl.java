@@ -35,8 +35,10 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
     private IMedicinalPlantsService medicinalPlantsService;
 
     @Override
-    public Result batchSaveImportData(MultipartFile file, Map<String, String> requestParams) {
+    public Result batchSaveImportData(MultipartFile file, String type) {
         log.info("开始使用自定义映射导入Excel文件：{}", file.getOriginalFilename());
+
+        String queryId = UUID.randomUUID().toString().replace("-", "");
 
         // 验证文件
         String validationError = ExcelUtils.validateExcelFile(file);
@@ -60,14 +62,16 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
                 return Result.fail("Excel文件中没有有效数据");
             }
 
-            importDataList.forEach(dto -> {
-                dto.setType(dto.getName().split("-")[0]);
-            });
             // 计算相似度
-            List<MedicinalPlants> medicinalPlantsList = medicinalPlantsService.list();
+            List<MedicinalPlants> medicinalPlantsList = medicinalPlantsService.lambdaQuery().eq(type != null ,MedicinalPlants::getType, type).list();
             
             // 计算余弦相似度并找出最相似的药用植物
             calculateCosineSimilarity(importDataList, medicinalPlantsList);
+
+            importDataList.forEach(dto -> {
+                dto.setType(dto.getTop1().split("-")[0]);
+                dto.setBatch(queryId);
+            });
 
             // 批量保存数据
             Map<String, Object> saveResult = batchSave(importDataList);
@@ -81,6 +85,7 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
             finalResult.put("errorCount", readResult.get("errorCount"));
             finalResult.put("readErrorMessages", readResult.get("errorMessages"));
             finalResult.put("saveErrorMessages", saveResult.get("errorMessages"));
+            finalResult.put("queryId", queryId);
 
             return Result.success(finalResult);
 

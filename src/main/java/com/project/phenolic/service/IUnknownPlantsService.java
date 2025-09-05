@@ -19,7 +19,7 @@ import java.util.Map;
  */
 public interface IUnknownPlantsService extends IService<UnknownPlants> {
 
-    Result batchSaveImportData(MultipartFile file, Map<String, String> requestParams);
+    Result batchSaveImportData(MultipartFile file, String type);
 
     /**
      * 批量保存增强版导入数据
