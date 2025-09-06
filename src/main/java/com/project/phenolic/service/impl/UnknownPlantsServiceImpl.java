@@ -64,7 +64,7 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
 
             List<MedicinalPlants> medicinalPlantsList = new ArrayList<>();
             // 计算相似度
-            if (type != null && type.equals("all")) {
+            if (type != null && !type.equals("all")) {
                 medicinalPlantsList = medicinalPlantsService.lambdaQuery().eq(type != null ,MedicinalPlants::getType, type).list();
 
             }else {
