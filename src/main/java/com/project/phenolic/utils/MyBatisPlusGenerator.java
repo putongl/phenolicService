@@ -18,7 +18,7 @@ import java.util.Collections;
  */
 public class MyBatisPlusGenerator {
     // 表名
-    public static final String TABLE_NAME = "unknown_plants";
+    public static final String TABLE_NAME = "similarity";
     // 作者
     public static final String AUTHOR = "lhy";
     //Mapper 路径E:\FOR-U-Projects\freight_service

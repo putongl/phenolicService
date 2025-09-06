@@ -3,9 +3,11 @@ package com.project.phenolic.service.impl;
 import com.project.phenolic.common.Result;
 import com.project.phenolic.config.ExcelFieldMapping;
 import com.project.phenolic.entity.MedicinalPlants;
+import com.project.phenolic.entity.Similarity;
 import com.project.phenolic.entity.UnknownPlants;
 import com.project.phenolic.mapper.UnknownPlantsMapper;
 import com.project.phenolic.service.IMedicinalPlantsService;
+import com.project.phenolic.service.ISimilarityService;
 import com.project.phenolic.service.IUnknownPlantsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.project.phenolic.utils.ExcelUtils;
@@ -33,6 +35,9 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
 
     @Autowired
     private IMedicinalPlantsService medicinalPlantsService;
+
+    @Autowired
+    private ISimilarityService similarityService;
 
     @Override
     public Result batchSaveImportData(MultipartFile file, String type) {
@@ -64,23 +69,31 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
 
             List<MedicinalPlants> medicinalPlantsList = new ArrayList<>();
             // 计算相似度
-            if (type != null && !type.equals("all")) {
+            if (type != null && !type.equals("All")) {
                 medicinalPlantsList = medicinalPlantsService.lambdaQuery().eq(type != null ,MedicinalPlants::getType, type).list();
-
             }else {
                 medicinalPlantsList = medicinalPlantsService.list();
             }
 
+            ArrayList<Similarity> similaritieList = new ArrayList<>();
+
             // 计算余弦相似度并找出最相似的药用植物
-            calculateCosineSimilarity(importDataList, medicinalPlantsList);
+            calculateCosineSimilarity(importDataList, medicinalPlantsList, similaritieList);
 
             importDataList.forEach(dto -> {
                 dto.setType(dto.getTop1().split("-")[0]);
                 dto.setBatch(queryId);
             });
 
+            similaritieList.forEach(similarity -> {
+                similarity.setBatch(queryId);
+            });
+
             // 批量保存数据
             Map<String, Object> saveResult = batchSave(importDataList);
+
+            similarityService.saveBatch(similaritieList);
+
 
             // 合并结果
             Map<String, Object> finalResult = new java.util.HashMap<>();
@@ -166,10 +179,12 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
 
     /**
      * 计算余弦相似度
-     * @param importDataList 未知植物数据列表
+     *
+     * @param importDataList      未知植物数据列表
      * @param medicinalPlantsList 药用植物数据列表
+     * @param similaritieList
      */
-    private void calculateCosineSimilarity(List<UnknownPlants> importDataList, List<MedicinalPlants> medicinalPlantsList) {
+    private void calculateCosineSimilarity(List<UnknownPlants> importDataList, List<MedicinalPlants> medicinalPlantsList, ArrayList<Similarity> similaritieList) {
         log.info("开始计算余弦相似度，未知植物数量：{}，药用植物数量：{}", importDataList.size(), medicinalPlantsList.size());
         
         for (int i = 0; i < importDataList.size(); i++) {
@@ -186,7 +201,14 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
             for (MedicinalPlants medicinalPlant : medicinalPlantsList) {
                 double[] y = extractTimeVector(medicinalPlant);
                 double similarity = computeCosineSimilarity(x, y);
-                
+
+                Similarity similarityObj = new Similarity();
+                similarityObj.setUnknownPlants(unknownPlant.getName());
+                similarityObj.setMedicinalPlants(medicinalPlant.getName());
+                similarityObj.setSimilarity(String.valueOf(similarity));
+
+                similaritieList.add(similarityObj);
+
                 // 更新最相似的6个结果
                 updateTopSimilar(topSimilar, topSimilarityValues, medicinalPlant.getName(), similarity);
             }
