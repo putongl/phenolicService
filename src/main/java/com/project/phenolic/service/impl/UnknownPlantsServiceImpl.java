@@ -62,9 +62,15 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
                 return Result.fail("Excel文件中没有有效数据");
             }
 
+            List<MedicinalPlants> medicinalPlantsList = new ArrayList<>();
             // 计算相似度
-            List<MedicinalPlants> medicinalPlantsList = medicinalPlantsService.lambdaQuery().eq(type != null ,MedicinalPlants::getType, type).list();
-            
+            if (type != null) {
+                medicinalPlantsList = medicinalPlantsService.lambdaQuery().eq(type != null ,MedicinalPlants::getType, type).list();
+
+            }else {
+                medicinalPlantsList = medicinalPlantsService.list();
+            }
+
             // 计算余弦相似度并找出最相似的药用植物
             calculateCosineSimilarity(importDataList, medicinalPlantsList);
 
