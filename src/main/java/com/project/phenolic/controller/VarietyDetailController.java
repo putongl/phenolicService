@@ -32,7 +32,7 @@ public class VarietyDetailController {
         
         // 查询sampleName以该前缀开头的记录，例如 AiDC-1, AiDC-2
         List<VarietyDetail> list = varietyDetailService.lambdaQuery()
-                .likeRight(VarietyDetail::getSampleName, sampleNamePrefix + "-")
+                .likeRight(VarietyDetail::getSampleName, sampleNamePrefix)
                 .list();
 
         return Result.success(list);

@@ -1,7 +1,10 @@
 package com.project.phenolic.controller;
 
 import com.project.phenolic.common.Result;
+import com.project.phenolic.entity.MedicinalPlants;
 import com.project.phenolic.entity.UnknownPlants;
+import com.project.phenolic.entity.vo.ComparisonResult;
+import com.project.phenolic.service.IMedicinalPlantsService;
 import com.project.phenolic.service.IUnknownPlantsService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +31,9 @@ public class UnknownPlantsController {
 
     @Autowired
     private IUnknownPlantsService unknownPlantsService;
+
+    @Autowired
+    private IMedicinalPlantsService medicinalPlantsService;
 
     /**
      *  批量导入
@@ -61,10 +67,14 @@ public class UnknownPlantsController {
         Integer topMatchNumber = queryMap.get("topMatchNumber") != null ? 
             Integer.parseInt(queryMap.get("topMatchNumber").toString()) : null;
 
+        List<List<ComparisonResult>> result = new ArrayList<>();
+
         try {
             // 调用服务层处理导入
             List<UnknownPlants> list = unknownPlantsService.lambdaQuery().eq(UnknownPlants::getBatch, queryId)
                     .list();
+
+            List<ComparisonResult> compList = new ArrayList<>();
 
             // 正则表达式匹配括号中的相似度值
             Pattern pattern = Pattern.compile("\\((\\d+\\.\\d+)\\)");
@@ -106,9 +116,18 @@ public class UnknownPlantsController {
                     .collect(Collectors.joining(","));
                 
                 unknownPlants.setTop(topResult);
+
+                String top1 = unknownPlants.getTop1();
+                String plantName = extractBeforeParenthesis(top1);
+                MedicinalPlants medicinalPlant = medicinalPlantsService.lambdaQuery().eq(MedicinalPlants::getName, plantName).one();
+
+                compList.add(new ComparisonResult(unknownPlants, medicinalPlant));
+
             }
 
-            return Result.success(list);
+            result.add(compList);
+
+            return Result.success(result);
 
         } catch (Exception e) {
             log.error("查询批次导入数据失败", e);
@@ -128,6 +147,27 @@ public class UnknownPlantsController {
             this.originalValue = originalValue;
             this.similarity = similarity;
             this.topIndex = topIndex;
+        }
+    }
+
+    /**
+     * 提取括号前的字符串内容
+     * @param input 原始字符串
+     * @return 括号前的字符串，如果没有括号则返回原字符串
+     */
+    public static String extractBeforeParenthesis(String input) {
+        if (input == null || input.isEmpty()) {
+            return input;
+        }
+
+        // 查找左括号的位置
+        int index = input.indexOf('(');
+
+        // 如果找到了左括号，截取它之前的部分；否则返回原字符串
+        if (index != -1) {
+            return input.substring(0, index).trim();
+        } else {
+            return input;
         }
     }
 
