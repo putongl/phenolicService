@@ -67,8 +67,6 @@ public class UnknownPlantsController {
         Integer topMatchNumber = queryMap.get("topMatchNumber") != null ? 
             Integer.parseInt(queryMap.get("topMatchNumber").toString()) : null;
 
-        List<List<ComparisonResult>> result = new ArrayList<>();
-
         try {
             // 调用服务层处理导入
             List<UnknownPlants> list = unknownPlantsService.lambdaQuery().eq(UnknownPlants::getBatch, queryId)
@@ -125,9 +123,7 @@ public class UnknownPlantsController {
 
             }
 
-            result.add(compList);
-
-            return Result.success(result);
+            return Result.success(compList);
 
         } catch (Exception e) {
             log.error("查询批次导入数据失败", e);
