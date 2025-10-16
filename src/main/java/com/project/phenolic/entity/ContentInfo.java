@@ -57,5 +57,7 @@ public class ContentInfo implements Serializable {
 
     private Double dqa45;
 
+    private String type;
+
 
 }

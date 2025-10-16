@@ -262,5 +262,40 @@ public class UnknownContentController {
         return data;
     }
 
+    /**
+     * 计算
+     */
+    @PostMapping("/calculate")
+    private UnknownContent calculate(@RequestBody Map<String,Object> paramMap) {
+
+        String name = paramMap.get("name").toString();
+        Object listObj = paramMap.get("list");
+
+        ArrayList<ContentSampleData> contentSampleList = new ArrayList<>();
+
+        if (listObj instanceof List) {
+            List<?> dataList = (List<?>) listObj;
+            for (Object item : dataList){
+                if (item instanceof Map){
+                    Map<String,Object> dataMap = (Map<String,Object>) item;
+
+                    ContentSampleData data = new ContentSampleData();
+                    data.setShortName(dataMap.get("shortName").toString());
+                    data.setMass(Double.parseDouble(dataMap.get("mass").toString()));
+                    data.setVolume(Double.parseDouble(dataMap.get("volume").toString()));
+                    data.setArea(Double.parseDouble(dataMap.get("area").toString()));
+
+                    contentSampleList.add(data);
+                }
+            }
+        }
+        UnknownContent unknownContent = calculateContent(contentSampleList, name);
+        unknownContent.setBatch(paramMap.get("batch").toString());
+        unknownContentService.save(unknownContent);
+
+        return unknownContent;
+
+    }
+
 
 }
