@@ -107,55 +107,123 @@ public class UnknownContentController {
 
             switch (data.getShortName().toUpperCase()) {
                 case "GAL":
-                    info.setGal(data.getVolume() * data.getArea() / 124672300.4069 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setGal(data.getVolume() * data.getArea() / 124672300.4069 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setGal(0.0);
+                    }
                     break;
                 case "1-CQA":
-                    info.setCqa1(data.getVolume() * data.getArea() / 43904505.520185 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setCqa1(data.getVolume() * data.getArea() / 43904505.520185 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setCqa1(0.0);
+                    }
                     break;
                 case "5-CQA":
-                    info.setCqa5(data.getVolume() * data.getArea() / 46889859.701983 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setCqa5(data.getVolume() * data.getArea() / 46889859.701983 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setCqa5(0.0);
+                    }
                     break;
                 case "3-CQA":
-                    info.setCqa3(data.getVolume() * data.getArea() / 48629727.642447 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setCqa3(data.getVolume() * data.getArea() / 48629727.642447 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setCqa3(0.0);
+                    }
                     break;
                 case "4-CQA":
-                    info.setCqa4(data.getVolume() * data.getArea() / 48516671.290083 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setCqa4(data.getVolume() * data.getArea() / 48516671.290083 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setCqa4(0.0);
+                    }
                     break;
                 case "CAF":
-                    info.setCaf(data.getVolume() * data.getArea() / 83754692.334035 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setCaf(data.getVolume() * data.getArea() / 83754692.334035 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setCaf(0.0);
+                    }
                     break;
                 case "SYR":
-                    info.setSyr(data.getVolume() * data.getArea() / 113213957.13 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setSyr(data.getVolume() * data.getArea() / 113213957.13 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setSyr(0.0);
+                    }
                     break;
                 case "1,3-DQA":
-                    info.setDqa13(data.getVolume() * data.getArea() / 48896559.211812 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setDqa13(data.getVolume() * data.getArea() / 48896559.211812 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setDqa13(0.0);
+                    }
                     break;
                 case "P-COU":
-                    info.setPcou(data.getVolume() * data.getArea() / 69685643.641915 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setPcou(data.getVolume() * data.getArea() / 69685643.641915 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setPcou(0.0);
+                    }
                     break;
                 case "RUT":
-                    info.setRut(data.getVolume() * data.getArea() / 21290592.122034 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setRut(data.getVolume() * data.getArea() / 21290592.122034 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setRut(0.0);
+                    }
                     break;
                 case "HYP":
-                    info.setHyp(data.getVolume() * data.getArea() / 27329797.596531 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setHyp(data.getVolume() * data.getArea() / 27329797.596531 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setHyp(0.0);
+                    }
                     break;
                 case "ISO":
-                    info.setIso(data.getVolume() * data.getArea() / 28306518.764197 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setIso(data.getVolume() * data.getArea() / 28306518.764197 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setIso(0.0);
+                    }
                     break;
                 case "LUT":
-                    info.setLut(data.getVolume() * data.getArea() / 33374856.454489 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setLut(data.getVolume() * data.getArea() / 33374856.454489 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setLut(0.0);
+                    }
                     break;
                 case "3,4-DQA":
-                    info.setDqa34(data.getVolume() * data.getArea() / 59441551.90071 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setDqa34(data.getVolume() * data.getArea() / 59441551.90071 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setDqa34(0.0);
+                    }
                     break;
                 case "QUE":
-                    info.setQue(data.getVolume() * data.getArea() / 29220434.876873 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setQue(data.getVolume() * data.getArea() / 29220434.876873 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setQue(0.0);
+                    }
                     break;
                 case "3,5-DQA":
-                    info.setDqa35(data.getVolume() * data.getArea() / 63732877.875838 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setDqa35(data.getVolume() * data.getArea() / 63732877.875838 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setDqa35(0.0);
+                    }
                     break;
                 case "4,5-DQA":
-                    info.setDqa45(data.getVolume() * data.getArea() / 62643328.429183 / data.getMass() / 1000 * 100 * 10000);
+                    if (data.getMass() != 0){
+                        info.setDqa45(data.getVolume() * data.getArea() / 62643328.429183 / data.getMass() / 1000 * 100 * 10000);
+                    } else {
+                        info.setDqa45(0.0);
+                    }
                     break;
             }
         }
@@ -187,6 +255,41 @@ public class UnknownContentController {
             // 向外抛出异常（可选，根据上层逻辑是否需要捕获）
             throw new RuntimeException("数据保存失败：" + e.getMessage(), e);
         }
+    }
+
+    /**
+     * 计算
+     */
+    @PostMapping("/calculate")
+    public UnknownContent calculate(@RequestBody Map<String,Object> paramMap) {
+
+        String name = paramMap.get("name").toString();
+        Object listObj = paramMap.get("list");
+
+        ArrayList<ContentSampleData> contentSampleList = new ArrayList<>();
+
+        if (listObj instanceof List) {
+            List<?> dataList = (List<?>) listObj;
+            for (Object item : dataList){
+                if (item instanceof Map){
+                    Map<String,Object> dataMap = (Map<String,Object>) item;
+
+                    ContentSampleData data = new ContentSampleData();
+                    data.setShortName(dataMap.get("shortName").toString());
+                    data.setMass(Double.parseDouble(dataMap.get("mass").toString()));
+                    data.setVolume(Double.parseDouble(dataMap.get("volume").toString()));
+                    data.setArea(Double.parseDouble(dataMap.get("area").toString()));
+
+                    contentSampleList.add(data);
+                }
+            }
+        }
+        UnknownContent unknownContent = calculateContent(contentSampleList, name);
+        unknownContent.setBatch(paramMap.get("batch").toString());
+        unknownContentService.save(unknownContent);
+
+        return unknownContent;
+
     }
 
 
@@ -260,41 +363,6 @@ public class UnknownContentController {
         data.setShortName(shortName);
         // mass, volume, area 保持为null，导出时显示为空
         return data;
-    }
-
-    /**
-     * 计算
-     */
-    @PostMapping("/calculate")
-    private UnknownContent calculate(@RequestBody Map<String,Object> paramMap) {
-
-        String name = paramMap.get("name").toString();
-        Object listObj = paramMap.get("list");
-
-        ArrayList<ContentSampleData> contentSampleList = new ArrayList<>();
-
-        if (listObj instanceof List) {
-            List<?> dataList = (List<?>) listObj;
-            for (Object item : dataList){
-                if (item instanceof Map){
-                    Map<String,Object> dataMap = (Map<String,Object>) item;
-
-                    ContentSampleData data = new ContentSampleData();
-                    data.setShortName(dataMap.get("shortName").toString());
-                    data.setMass(Double.parseDouble(dataMap.get("mass").toString()));
-                    data.setVolume(Double.parseDouble(dataMap.get("volume").toString()));
-                    data.setArea(Double.parseDouble(dataMap.get("area").toString()));
-
-                    contentSampleList.add(data);
-                }
-            }
-        }
-        UnknownContent unknownContent = calculateContent(contentSampleList, name);
-        unknownContent.setBatch(paramMap.get("batch").toString());
-        unknownContentService.save(unknownContent);
-
-        return unknownContent;
-
     }
 
 
