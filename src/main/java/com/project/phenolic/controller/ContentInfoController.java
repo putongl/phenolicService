@@ -8,6 +8,7 @@ import com.project.phenolic.common.Result;
 import com.project.phenolic.entity.ContentInfo;
 import com.project.phenolic.entity.ContentSampleData;
 import com.project.phenolic.service.IContentInfoService;
+import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -28,6 +29,7 @@ import java.util.*;
  * @author lhy
  * @since 2025-10-11
  */
+@Slf4j
 @RestController
 @RequestMapping("/contentInfo")
 public class ContentInfoController {
@@ -247,7 +249,8 @@ public class ContentInfoController {
             }
 
         } catch (Exception e) {
-            return Result.fail("生成数据失败");
+            log.error("生成数据失败", e);
+            return Result.fail("生成数据失败" + e);
         }
 
         return Result.success(result);
@@ -260,6 +263,20 @@ public class ContentInfoController {
         // 计算最小值、最大值
         double minGla = list.get(0);
         double maxGla = list.get(n - 1);
+
+        // 处理只有1条数据的情况
+        if (n == 1) {
+            Map<String, Object> data = new HashMap<>();
+            data.put("min", minGla);
+            data.put("q1", minGla); // 只有1条数据时，Q1、中位数、Q3都等于该值
+            data.put("mid", minGla);
+            data.put("q3", minGla);
+            data.put("max", maxGla);
+            data.put("iqr", 0.0); // 四分位距为0
+            data.put("lowerBound", minGla); // 边界值也设为该值
+            data.put("upperBound", maxGla);
+            return data;
+        }
 
         // 计算中位数（midGla = Q2）
         double midGla;
