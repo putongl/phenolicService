@@ -80,7 +80,7 @@ public class MedicinalPlantsController {
     @GetMapping("/downloadTemplate")
     public void downloadExcelTemplate(HttpServletResponse response) {
         // 1. 定义文件名（不含后缀）
-        String fileName = "未知样品模板";
+        String fileName = "Unknown Sample Template";
 
         // 3. 调用工具方法下载模板
         ExcelUtils.downloadTemplate(response, fileName, UnknownPlants.class,  null);

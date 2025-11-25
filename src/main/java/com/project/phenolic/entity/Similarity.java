@@ -30,21 +30,21 @@ public class Similarity implements Serializable {
     /**
      * 未知
      */
-    @ExcelProperty("未知样本")
-    @ColumnWidth(15)
+    @ExcelProperty("unknown sample")
+    @ColumnWidth(25)
     private String unknownPlants;
 
     /**
      * 已知
      */
-    @ExcelProperty("对比样本")
-    @ColumnWidth(15)
+    @ExcelProperty("comparison sample")
+    @ColumnWidth(27)
     private String medicinalPlants;
 
     /**
      * 相似度
      */
-    @ExcelProperty("相似度")
+    @ExcelProperty("similarity")
     @ColumnWidth(20)
     private String similarity;
 

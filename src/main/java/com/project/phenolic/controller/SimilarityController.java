@@ -35,7 +35,7 @@ public class SimilarityController {
         List<Similarity> list = similarityService.lambdaQuery()
                 .eq(Similarity::getBatch, batch).list();
 
-        ExcelUtils.exportExcel(response, "相似度数据", Similarity.class, list, "相似度数据");
+        ExcelUtils.exportExcel(response, "Similarity Data", Similarity.class, list, "Similarity Data");
 
 
     }

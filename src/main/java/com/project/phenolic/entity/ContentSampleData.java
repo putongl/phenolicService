@@ -7,23 +7,23 @@ import lombok.Data;
 @Data
 public class ContentSampleData {
 
-    @ExcelProperty("化合物")
+    @ExcelProperty("compound")
     @ColumnWidth(20)
     private String compound;
 
-    @ExcelProperty("缩写")
-    @ColumnWidth(15)
+    @ExcelProperty("abbreviation")
+    @ColumnWidth(20)
     private String shortName;
 
-    @ExcelProperty("称样量（g）")
-    @ColumnWidth(15)
+    @ExcelProperty("weighing sample（g）")
+    @ColumnWidth(20)
     private Double mass;
 
-    @ExcelProperty("体积（ml）")
-    @ColumnWidth(15)
+    @ExcelProperty("volume（ml）")
+    @ColumnWidth(20)
     private Double volume;
 
-    @ExcelProperty("峰面积")
-    @ColumnWidth(15)
+    @ExcelProperty("peak area")
+    @ColumnWidth(20)
     private Double area;
 }

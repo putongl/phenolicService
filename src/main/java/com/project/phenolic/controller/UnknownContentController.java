@@ -299,7 +299,7 @@ public class UnknownContentController {
     @GetMapping("/downloadTemplate")
     public void downloadExcelTemplate(HttpServletResponse response) {
         // 1. 定义文件名（不含后缀）
-        String fileName = "未知含量模板";
+        String fileName = "Unknown Content Template";
 
         List<ContentSampleData> dataList = createTemplateData();
 
@@ -317,7 +317,7 @@ public class UnknownContentController {
         List<UnknownContent> list = unknownContentService.lambdaQuery()
                 .eq(UnknownContent::getBatch, batch).list();
 
-        ExcelUtils.exportExcel(response, "未知含量样本数据", UnknownContent.class, list, "未知含量样本数据");
+        ExcelUtils.exportExcel(response, "Unknown content data", UnknownContent.class, list, "Unknown content data");
 
     }
 
