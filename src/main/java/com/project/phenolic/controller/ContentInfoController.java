@@ -11,10 +11,7 @@ import com.project.phenolic.service.IContentInfoService;
 import lombok.extern.slf4j.Slf4j;
 import lombok.var;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.InputStream;
@@ -180,71 +177,71 @@ public class ContentInfoController {
             // 如果集合为空，则跳过
             // 不为空的集合进行计算
             if (!glaList.isEmpty()) {
-                Map<String, Object> data = getCalResult(glaList);
+                Map<String, Object> data = calculateStatistics(glaList);
                 result.put("gal", data);
             }
             if (!cqa1List.isEmpty()) {
-                Map<String, Object> data = getCalResult(cqa1List);
+                Map<String, Object> data = calculateStatistics(cqa1List);
                 result.put("cqa1", data);
             }
             if (!cqa5List.isEmpty()) {
-                Map<String, Object> data = getCalResult(cqa5List);
+                Map<String, Object> data = calculateStatistics(cqa5List);
                 result.put("cqa5", data);
             }
             if (!cqa3List.isEmpty()) {
-                Map<String, Object> data = getCalResult(cqa3List);
+                Map<String, Object> data = calculateStatistics(cqa3List);
                 result.put("cqa3", data);
             }
             if (!cqa4List.isEmpty()) {
-                Map<String, Object> data = getCalResult(cqa4List);
+                Map<String, Object> data = calculateStatistics(cqa4List);
                 result.put("cqa4", data);
             }
             if (!cafList.isEmpty()) {
-                Map<String, Object> data = getCalResult(cafList);
+                Map<String, Object> data = calculateStatistics(cafList);
                 result.put("caf", data);
             }
             if (!syrList.isEmpty()) {
-                Map<String, Object> data = getCalResult(syrList);
+                Map<String, Object> data = calculateStatistics(syrList);
                 result.put("syr", data);
             }
             if (!dqa13List.isEmpty()) {
-                Map<String, Object> data = getCalResult(dqa13List);
+                Map<String, Object> data = calculateStatistics(dqa13List);
                 result.put("dqa13", data);
             }
             if (!pcouList.isEmpty()) {
-                Map<String, Object> data = getCalResult(pcouList);
+                Map<String, Object> data = calculateStatistics(pcouList);
                 result.put("pcou", data);
             }
             if (!rutList.isEmpty()) {
-                Map<String, Object> data = getCalResult(rutList);
+                Map<String, Object> data = calculateStatistics(rutList);
                 result.put("rut", data);
             }
             if (!hypList.isEmpty()) {
-                Map<String, Object> data = getCalResult(hypList);
+                Map<String, Object> data = calculateStatistics(hypList);
                 result.put("hyp", data);
             }
             if (!isoList.isEmpty()) {
-                Map<String, Object> data = getCalResult(isoList);
+                Map<String, Object> data = calculateStatistics(isoList);
                 result.put("iso", data);
             }
             if (!lutList.isEmpty()) {
-                Map<String, Object> data = getCalResult(lutList);
+                Map<String, Object> data = calculateStatistics(lutList);
                 result.put("lut", data);
             }
             if (!dqa34List.isEmpty()) {
-                Map<String, Object> data = getCalResult(dqa34List);
+                Map<String, Object> data = calculateStatistics(dqa34List);
                 result.put("dqa34", data);
             }
             if (!queList.isEmpty()) {
-                Map<String, Object> data = getCalResult(queList);
+                Map<String, Object> data = calculateStatistics(queList);
                 result.put("que", data);
             }
             if (!dqa35List.isEmpty()) {
-                Map<String, Object> data = getCalResult(dqa35List);
+                Map<String, Object> data = calculateStatistics(dqa35List);
                 result.put("dqa35", data);
             }
             if (!dqa45List.isEmpty()) {
-                Map<String, Object> data = getCalResult(dqa45List);
+                Map<String, Object> data = calculateStatistics(dqa45List);
                 result.put("dqa45", data);
             }
 
@@ -331,6 +328,62 @@ public class ContentInfoController {
         data.put("lowerBound", lowerBound);
         data.put("upperBound", upperBound);
         return data;
+    }
+
+    private static Map<String, Object> calculateStatistics(List<Double> dataList) {
+        // 转换为有序列表
+        Collections.sort(dataList);
+
+        // 计算关键指标
+        int n = dataList.size();
+        double min = dataList.get(0);
+        double max = dataList.get(n - 1);
+        double median = getPercentile(dataList, 50);
+        double q1 = getPercentile(dataList, 25);
+        double q3 = getPercentile(dataList, 75);
+        double iqr = q3 - q1;
+        double lowerFence = q1 - 1.5 * iqr;
+        double upperFence = q3 + 1.5 * iqr;
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("min", min);
+        data.put("q1", q1);
+        data.put("mid", median);
+        data.put("q3", q3);
+        data.put("max", max);
+        data.put("iqr", iqr);
+        data.put("lowerBound", lowerFence);
+        data.put("upperBound", upperFence);
+        return data;
+    }
+
+    /**
+     * 计算百分位数（模拟numpy.percentile逻辑）
+     */
+    private static double getPercentile(List<Double> sortedData, double percentile) {
+        int n = sortedData.size();
+        double index = (percentile / 100.0) * (n - 1);
+        int lower = (int) Math.floor(index);
+        int upper = (int) Math.ceil(index);
+        double weight = index - lower;
+
+        if (upper >= n) {
+            return sortedData.get(n - 1);
+        } else if (lower == upper) {
+            return sortedData.get(lower);
+        } else {
+            return sortedData.get(lower) * (1 - weight) + sortedData.get(upper) * weight;
+        }
+    }
+
+    /**
+     * 根据类型获取数据
+     */
+    @PostMapping("/getDataByType")
+    public Result getDataByType(@RequestParam("type") String type) {
+        List<ContentInfo> list = contentInfoService.lambdaQuery().eq(ContentInfo::getType, type).list();
+
+        return Result.success(list);
     }
 
 }
