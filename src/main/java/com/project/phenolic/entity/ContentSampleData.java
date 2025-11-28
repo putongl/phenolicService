@@ -16,7 +16,7 @@ public class ContentSampleData {
     private String shortName;
 
     @ExcelProperty("weighing sample（g）")
-    @ColumnWidth(20)
+    @ColumnWidth(33)
     private Double mass;
 
     @ExcelProperty("volume（ml）")
