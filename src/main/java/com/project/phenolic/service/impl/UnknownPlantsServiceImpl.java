@@ -12,10 +12,12 @@ import com.project.phenolic.service.IUnknownPlantsService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.project.phenolic.utils.ExcelUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.poi.ss.usermodel.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.InputStream;
 import java.util.*;
 
 /**
@@ -50,6 +52,41 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
         if (validationError != null) {
             return Result.fail("验证文件失败，上传文件需excel文件");
         }
+
+        try (InputStream inputStream = file.getInputStream();
+             Workbook workbook = WorkbookFactory.create(inputStream)) {
+
+            // 获取第一个工作表
+            Sheet sheet = workbook.getSheetAt(0);
+            if (sheet == null) {
+                return Result.fail("Excel文件中没有工作表");
+            }
+
+            // 获取表头行（第一行）
+            Row headerRow = sheet.getRow(0);
+            if (headerRow == null) {
+                return Result.fail("Excel文件中没有表头行");
+            }
+
+            // 获取第一列的表头单元格
+            Cell firstHeaderCell = headerRow.getCell(0);
+            if (firstHeaderCell == null) {
+                return Result.fail("Excel文件表头第一列不能为空");
+            }
+
+            // 获取单元格的值（处理不同单元格类型）
+            String firstHeaderValue = getCellValueAsString(firstHeaderCell).trim();
+
+            // 校验表头是否为name（不区分大小写，可根据需求调整）
+            if (!"name".equals(firstHeaderValue)) {
+                return Result.fail(String.format("Excel file header validation failed. The header of the first column must be 'name', but the current value is:%s", firstHeaderValue));
+            }
+
+        } catch (Exception e) {
+            log.error("校验Excel表头失败", e);
+            return Result.fail("校验Excel表头失败：" + e.getMessage());
+        }
+
         try {
             // 使用自定义映射读取Excel
             Map<String, Object> readResult = ExcelUtils.unknowWithMapping(file, excelFieldMapping);
@@ -312,6 +349,30 @@ public class UnknownPlantsServiceImpl extends ServiceImpl<UnknownPlantsMapper, U
             // similarity保留三位小数
             similarity = Math.round(similarity * 1000.0) / 1000.0;
             topNames[insertIndex] = name + "(" + similarity + ")";
+        }
+    }
+
+    private String getCellValueAsString(Cell cell) {
+        if (cell == null) {
+            return "";
+        }
+        switch (cell.getCellType()) {
+            case STRING:
+                return cell.getStringCellValue();
+            case NUMERIC:
+                // 处理数字类型的表头（例如数字格式的name）
+                return String.valueOf((long) cell.getNumericCellValue());
+            case BOOLEAN:
+                return String.valueOf(cell.getBooleanCellValue());
+            case FORMULA:
+                // 处理公式类型的单元格
+                try {
+                    return String.valueOf(cell.getNumericCellValue());
+                } catch (Exception e) {
+                    return cell.getStringCellValue();
+                }
+            default:
+                return "";
         }
     }
 }

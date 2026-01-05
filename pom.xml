@@ -34,6 +34,7 @@
         <java-jwt.version>3.11.0</java-jwt.version>
         <jwt.version>0.9.1</jwt.version>
         <guava.version>30.0-jre</guava.version>
+        <jackson.version>2.15.4</jackson.version>
     </properties>
     <dependencies>
         <dependency>
@@ -208,12 +209,22 @@
                 </configuration>
             </plugin>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.2</version> <!-- 版本和Spring Boot兼容即可 -->
+                <configuration>
+                    <!-- 跳过测试执行（推荐），保留测试代码编译 -->
+                    <skipTests>false</skipTests>
+                    <!-- 如需彻底跳过测试编译，可追加 <skip>true</skip> -->
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${spring-boot.version}</version>
                 <configuration>
                     <mainClass>com.project.phenolic.PhenolicApplication</mainClass>
-                    <skip>true</skip>
+                    <skip>false</skip>
                 </configuration>
                 <executions>
                     <execution>
